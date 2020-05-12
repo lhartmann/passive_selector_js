@@ -2,7 +2,7 @@
 // License GNU Affero-GPL
 // (c) 2020, Lucas V. Hartmann
 
-// Select resistors for current LM317-based source.
+// Select resistors for LM317-based current source.
 // Uses parallel resistors to overcome shortage of different values.
 
 const PN = require('./lib/preferred_numbers.js');
