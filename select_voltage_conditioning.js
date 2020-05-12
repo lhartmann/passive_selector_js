@@ -15,6 +15,7 @@ const Best = require('./lib/best.js');
 const Permutate = require('./lib/permutate.js');
 const parallel = require('./lib/parallel.js');
 
+// Available resistors: E24 prefixes from 1k to 1M.
 const Rset = PN.grow(1e3, 1e6, PN.E24);
 
 // Circuit model
@@ -47,8 +48,8 @@ function objective(R) {
 	if (V.Vol < Vol) return false;
 	if (V.Voh > Voh) return false;
 	
-	// Calculate error
-	return Voh - V.Voh + V.Vol - Vol;
+	// Maximize output swing
+	return -(V.Voh - V.Vol);
 }
 
 let best = new Best(objective);
