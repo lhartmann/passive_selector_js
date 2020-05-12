@@ -7,7 +7,7 @@
 
 const PN = require('./lib/preferred_numbers.js');
 const Best = require('./lib/best.js');
-const Permutate = require('./lib/permutate.js');
+const permutate = require('./lib/permutate.js');
 const parallel = require('./lib/parallel.js');
 
 // Very few prefixes (10 22 47) from 1k to 1M.
@@ -32,7 +32,7 @@ function objective(R) {
 }
 
 let best = new Best(objective);
-Permutate(4, Rset, R => best.push(R));
+permutate(4, Rset, R => best.push(R));
 let R = best.get();
 
 console.log("Best resistors: ", R);
