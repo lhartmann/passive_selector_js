@@ -10,7 +10,7 @@ const Best = require('./lib/best.js');
 const Permutate = require('./lib/permutate.js');
 const parallel = require('./lib/parallel.js');
 
-// Very few prefixes (10 22 47) from 1k to 1M.
+// Few prefixes from 1k to 1M.
 const Rset = PN.grow(10, 1000, PN.E6);
 
 // Desired current, and circuit model
