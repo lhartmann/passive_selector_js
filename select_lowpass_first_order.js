@@ -17,12 +17,13 @@ var Cset = PN.grow(1e-9, 1e-6, PN.E6);
 // In other words, 1k 2k 5k 10k 20k 50k 100k.
 var Fset = PN.grow(1e3, 1e5, [1,2,5]);
 
+// Cutoff frequency from components
+function Fc(R,C) {
+	return 1 / (2 * Math.PI * R * C);
+};
+
 // Iterate over target frequencies, each is a separate filter
 Fset.forEach((F) => {
-	function Fc(R,C) {
-		return 1 / (2 * Math.PI * R * C);
-	};
-	
 	let best = new Best(x => Math.abs(F - Fc(x.R,x.C)));
 	
 	// Iterate over resitors and capacitors
