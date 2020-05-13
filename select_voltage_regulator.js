@@ -2,7 +2,7 @@
 // License GNU Affero-GPL
 // (c) 2020, Lucas V. Hartmann
 
-// Select resistors for voltage regultator.
+// Select resistors for voltage regulator.
 // Uses parallel resistors to overcome shortage of different values.
 
 const PN = require('./lib/preferred_numbers.js');
